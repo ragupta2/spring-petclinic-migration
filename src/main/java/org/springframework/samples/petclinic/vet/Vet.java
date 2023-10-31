@@ -33,6 +33,8 @@ import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 import org.springframework.samples.petclinic.model.Person;
 
+import java.util.Random;
+
 /**
  * Simple JavaBean domain object representing a veterinarian.
  *
@@ -44,6 +46,13 @@ import org.springframework.samples.petclinic.model.Person;
 @Entity
 @Table(name = "vets")
 public class Vet extends Person {
+
+    // create instance of Random class
+    Random rand = new Random();
+
+    // Generate random integers in range 0 to 999
+    int vetEmployeeID = rand.nextInt(1000);
+    int vetUnionID = rand.nextInt(1000);
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "vet_specialties", joinColumns = @JoinColumn(name = "vet_id"), inverseJoinColumns = @JoinColumn(name = "specialty_id"))
