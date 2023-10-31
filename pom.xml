@@ -31,6 +31,9 @@
 
     <cobertura.version>2.7</cobertura.version>
 
+        <maven.compiler.source>19</maven.compiler.source>
+    <maven.compiler.target>19</maven.compiler.target>
+
   </properties>
 
   <dependencies>
@@ -205,6 +208,11 @@
           <contextFolder>${basedir}/src/main/less</contextFolder>
         </configuration>
         <dependencies>
+        <dependency>
+        <groupId>org.webjars.npm</groupId>
+        <artifactId>glob</artifactId>
+        <version>7.1.1</version>
+    </dependency>
           <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
